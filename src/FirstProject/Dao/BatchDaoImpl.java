@@ -131,4 +131,34 @@ public class BatchDaoImpl implements BatchDao {
 		return message;
 	}
 
+	@Override
+	public String updateNoOfStudent_Batch(int batchId, int numberOfStudent) {
+		String message = " Student Count not Updated..";
+		
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE batch SET numberofStudents= ? WHERE batchid=?");
+			
+			
+			
+			ps.setInt(1, numberOfStudent);
+			ps.setInt(2, batchId);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Student number Updated Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check Batch  Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
 }

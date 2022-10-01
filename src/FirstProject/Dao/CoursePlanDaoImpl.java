@@ -97,4 +97,64 @@ public class CoursePlanDaoImpl implements CoursePlanDao {
 		return coursePlanList;
 	}
 
+	@Override
+	public String updateTopic_CoursePlan(int planId, String topic) {
+		String message = " Topic Not Changed..";
+
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE coursePlan SET topic= ? WHERE planId=?");
+			
+			
+			
+			ps.setString(1, topic);
+			ps.setInt(2, planId);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Topic Changed Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check Plan Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
+	@Override
+	public String updateStatus_CoursePlan(int planId, String status) {
+		String message = " Status Not Changed..";
+
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE coursePlan SET status= ? WHERE planId=?");
+			
+			
+			
+			ps.setString(1, status);
+			ps.setInt(2, planId);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Status Changed Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check Plan Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
 }

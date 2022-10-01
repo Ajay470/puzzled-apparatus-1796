@@ -12,7 +12,7 @@ public class getAllCoursesPlanUseCase {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-CoursePlanDao dao = new CoursePlanDaoImpl();
+        CoursePlanDao dao = new CoursePlanDaoImpl();
 
 		
 		try {

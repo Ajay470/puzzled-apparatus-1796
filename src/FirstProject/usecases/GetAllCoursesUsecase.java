@@ -14,7 +14,7 @@ public class GetAllCoursesUsecase {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-      CourseDao dao = new CourseDaoImpl();
+        CourseDao dao = new CourseDaoImpl();
 
 		
 		try {

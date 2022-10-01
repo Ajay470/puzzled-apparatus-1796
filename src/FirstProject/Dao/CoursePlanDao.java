@@ -11,5 +11,9 @@ public interface CoursePlanDao {
     public String registerCoursePlan(CoursePlan courseplan );
 	
 	public List<CoursePlan> getAllCoursesPlan()throws CoursePlanException;
+	
+	public String updateTopic_CoursePlan(int  planId,String topic );
+	
+	public String updateStatus_CoursePlan(int  planId,String status );
 
 }

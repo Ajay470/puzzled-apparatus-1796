@@ -5,13 +5,9 @@ import java.util.List;
 import FirstProject.Exception.DaywiseUpdateException;
 import FirstProject.Exception.ReportException;
 import FirstProject.bean.DaywiseUpdate;
-import FirstProject.bean.Report;
 
-
-
-
-public interface ReportDao {
+public interface DaywiseUpdateDao {
 	
-	public List<Report> getReport()throws ReportException;
+	public List<DaywiseUpdate> getDaywiseUpdate()throws DaywiseUpdateException;
 
 }

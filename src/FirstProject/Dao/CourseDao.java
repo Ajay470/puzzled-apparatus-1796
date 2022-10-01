@@ -11,5 +11,9 @@ public interface CourseDao {
 	
 	public List<Course> getAllCourses()throws CourseException;
 	
+	public String updateFee_Course(int  CourseId,int Fee );
+	
+	public String updateDesc_Course(int  CourseId,String desc );
+	
 
 }

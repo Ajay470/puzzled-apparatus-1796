@@ -12,5 +12,7 @@ public interface BatchDao {
 	public List<Batch> getAllBatch()throws BatchException;
 	
 	public String allocateFaculty(int  FacultyId,int BatchId );
+	
+	public String updateNoOfStudent_Batch(int  batchId,int numberOfStudent );
 
 }

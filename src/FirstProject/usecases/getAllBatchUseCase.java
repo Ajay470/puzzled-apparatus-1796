@@ -15,7 +15,7 @@ public class getAllBatchUseCase {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BatchDao dao = new BatchDaoImpl();
+		       BatchDao dao = new BatchDaoImpl();
 		
 				
 				try {

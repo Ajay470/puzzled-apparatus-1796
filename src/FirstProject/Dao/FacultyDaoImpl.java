@@ -98,4 +98,64 @@ List<Faculty> FacultyList= new ArrayList<>();
 		return FacultyList;
 	}
 
+	@Override
+	public String updateMobile_Faculty(int facultyid, String mob) {
+		String message = " Mobile Number Not Updated..";
+
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE faculty SET mobile= ? WHERE facultyid=?");
+			
+			
+			
+			ps.setString(1, mob);
+			ps.setInt(2, facultyid);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Mobile Number Updated Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check faculty Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
+	@Override
+	public String updateAddress_Faculty(int facultyid, String add) {
+		String message = " Address Not Updated..";
+
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE faculty SET facultyaddress= ? WHERE facultyid=?");
+			
+			
+			
+			ps.setString(1, add);
+			ps.setInt(2, facultyid);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Address Updated Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check faculty Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
 }

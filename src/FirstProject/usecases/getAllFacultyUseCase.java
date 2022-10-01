@@ -16,7 +16,7 @@ public class getAllFacultyUseCase {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		FacultyDao dao = new FacultyDaoImpl();
+		       FacultyDao dao = new FacultyDaoImpl();
 	
 				
 				try {

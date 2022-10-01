@@ -28,8 +28,6 @@ public class registerCourseUseCase {
 		
 		CourseDao doa=new CourseDaoImpl();
 
-		
-		
 		Course course1=new Course();
 
 		course1.setCourseName(cname);
@@ -37,10 +35,6 @@ public class registerCourseUseCase {
 		course1.setCourseDescription(des);
 
 		
-		
-		
-		
-
 		String result=doa.registerCourse(course1);
 		
 		System.out.println(result);

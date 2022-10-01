@@ -101,6 +101,70 @@ List<Course> courseList= new ArrayList<>();
 		return courseList;
 	}
 
+
+
+	@Override
+	public String updateFee_Course(int CourseId, int Fee) {
+		String message = " Fee Not Updated..";
+
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE course SET fee= ? WHERE CourseId=?");
+			
+			
+			
+			ps.setInt(1, Fee);
+			ps.setInt(2, CourseId);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Fee Updated Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check Course Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
+
+
+	@Override
+	public String updateDesc_Course(int CourseId, String desc) {
+		String message = " Description Not Updated..";
+
+		 try(Connection conn= DBConnection.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement
+					("UPDATE course SET courseDescription= ? WHERE CourseId=?");
+			
+			
+			
+			ps.setString(1, desc);
+			ps.setInt(2, CourseId);
+		
+			int x= ps.executeUpdate();
+			
+			
+			if(x > 0)
+				message = "Description Updated Sucessfully !";
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Check Course Id");
+			message = e.getMessage();
+		}
+
+		return message;
+	}
+
 	
 	
 	
