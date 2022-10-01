@@ -34,17 +34,44 @@ FOREIGN KEY (facultyId) REFERENCES Faculty(facultyId)
 );
 
 
-Create table CoursPlan
+Create table CoursePlan
 (
 planId int primary Key auto_increment,
 batchId int,
 daynumber int,
 topic varchar(15),
 status varchar(12),
-FOREIGN KEY (batchId) REFERENCES batch(batchId ),
-
+FOREIGN KEY (batchId) REFERENCES batch(batchId )
 
 );
+
+
+View the Day wise update of every batch.
+
+select c.batchId,d.daynumber,a.coursename,d.topic,b.facultyname
+from course as a INNER JOIN batch as c
+ON a.courseId =c.CourseId 
+INNER JOIN Faculty as b
+ON c.facultyId =b.facultyId
+INNER JOIN coursePlan as d 
+ON c.batchId =d.batchId  order by c.batchId ;
+
+
+
+
+select c.batchId,a.coursename,b.facultyname,count(d.topic)
+from course as a INNER JOIN batch as c
+ON a.courseId =c.CourseId 
+INNER JOIN Faculty as b
+ON c.facultyId =b.facultyId
+INNER JOIN coursePlan as d 
+ON c.batchId =d.batchId group by d.batchId ;
+
+
+
+
+
+
 
 
 
