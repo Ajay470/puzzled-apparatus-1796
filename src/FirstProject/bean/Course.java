@@ -50,7 +50,7 @@ public class Course {
 		this.courseDescription = courseDescription;
 	}
 
-	public Course(int coursed, String courseName, int fee, String courseDescription) {
+	public Course(int courseId, String courseName, int fee, String courseDescription) {
 		super();
 		this.courseId = courseId;
 		this.courseName = courseName;

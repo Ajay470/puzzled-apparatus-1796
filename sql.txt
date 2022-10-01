@@ -7,4 +7,46 @@ courseDescription varchar(25)
 );
 
 
+Create table Faculty
+     (
+     facultyid int primary Key auto_increment,
+     facultyname varchar(15),
+     facultyaddress varchar(25),
+     mobile varchar(10),
+     email varchar(15),
+     username varchar(12) unique,
+     password varchar(15)
+     );
+
+
+
+Create table Batch
+(
+batchId int primary Key auto_increment,
+courseId int,
+facultyId int,
+numberofStudents int,
+batchstartDate date,
+duration varchar(12),
+FOREIGN KEY (courseId) REFERENCES Course(courseId),
+FOREIGN KEY (facultyId) REFERENCES Faculty(facultyId)
+
+);
+
+
+Create table CoursPlan
+(
+planId int primary Key auto_increment,
+batchId int,
+daynumber int,
+topic varchar(15),
+status varchar(12),
+FOREIGN KEY (batchId) REFERENCES batch(batchId ),
+
+
+);
+
+
+
+
 
