@@ -1,0 +1,10 @@
+Create table Course
+(
+courseId int primary Key auto_increment,
+courseName varchar(15),
+Fee int,
+courseDescription varchar(25)
+);
+
+
+
