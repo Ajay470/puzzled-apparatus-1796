@@ -1,3 +1,18 @@
+
+
+create table admin(
+name varchar(15),
+username varchar(12),
+password varchar(12)
+);
+
+insert into admin values('ajay','admin','admin');
+
+
+
+
+
+
 Create table Course
 (
 courseId int primary Key auto_increment,
@@ -54,7 +69,7 @@ ON a.courseId =c.CourseId
 INNER JOIN Faculty as b
 ON c.facultyId =b.facultyId
 INNER JOIN coursePlan as d 
-ON c.batchId =d.batchId  order by c.batchId ;
+ON c.batchId =d.batchId  order by c.batchId,d.daynumber;
 
 
 
@@ -66,6 +81,19 @@ INNER JOIN Faculty as b
 ON c.facultyId =b.facultyId
 INNER JOIN coursePlan as d 
 ON c.batchId =d.batchId group by d.batchId ;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

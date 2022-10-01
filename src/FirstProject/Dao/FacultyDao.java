@@ -15,6 +15,6 @@ public interface FacultyDao {
 	
 	public String updateAddress_Faculty(int facultyid,String add );
 	
-//	public String updatePassword_Faculty(int facultyid,String pass );
+	public String updatePassword_Faculty(int facultyid,String oldpassword,String newpassword )throws FacultyException;
 
 }

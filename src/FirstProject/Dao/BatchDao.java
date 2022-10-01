@@ -14,5 +14,7 @@ public interface BatchDao {
 	public String allocateFaculty(int  FacultyId,int BatchId );
 	
 	public String updateNoOfStudent_Batch(int  batchId,int numberOfStudent );
+	
+	
 
 }

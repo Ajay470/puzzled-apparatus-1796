@@ -99,7 +99,7 @@ List<Faculty> FacultyList= new ArrayList<>();
 	}
 
 	@Override
-	public String updateMobile_Faculty(int facultyid, String mob) {
+	public String updateMobile_Faculty(int facultyid, String mob){
 		String message = " Mobile Number Not Updated..";
 
 		 try(Connection conn= DBConnection.provideConnection()) {
@@ -155,6 +155,57 @@ List<Faculty> FacultyList= new ArrayList<>();
 			message = e.getMessage();
 		}
 
+		return message;
+	}
+
+	@Override
+	public String updatePassword_Faculty(int facultyid, String oldpassword, String newpassword) throws FacultyException {
+String message = "Not Updated...";
+		
+		
+      try(Connection conn= DBConnection.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("select * from faculty where facultyid = ? AND password = ? ");
+			
+			ps.setInt(1, facultyid);
+			ps.setString(2, oldpassword);
+			
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				PreparedStatement ps2 = conn.prepareStatement("update faculty set password = ? where facultyid = ?");
+				ps2.setString(1, newpassword);
+				ps2.setInt(2, facultyid);
+
+				int res = ps2.executeUpdate();
+				
+				if(res > 0) {
+					message = "Password Updated Successfully..";
+				}
+				else {
+					throw new FacultyException("Techical error..");
+				}
+				
+			}
+			else {
+				
+				throw new FacultyException("Invalid Faculty ID or Old Password....");
+				
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			throw new FacultyException(e.getMessage());
+			
+		}
+		
+		
+		
+		
 		return message;
 	}
 

@@ -246,11 +246,34 @@ public class Main {
 	
     //**********updateAddress_FacultyUseCase*********//
     
-//    public static void updatePassword_FacultyUseCase() {
-//    	
-//    	
-//    	
-//    }
+    public static void updatePassword_FacultyUseCase() {
+    	Scanner sc= new Scanner(System.in);
+ 		
+ 		System.out.println("Enter Faculty Id :");
+ 		int fid= sc.nextInt();
+ 		sc.nextLine();
+ 		System.out.println("Enter Old Password:");
+ 		String old= sc.nextLine();
+ 		
+ 		System.out.println("Enter new Password:");
+ 		String new1= sc.nextLine();
+ 	
+ 		
+ 		FacultyDao doa=new FacultyDaoImpl();
+
+
+ 		String result = null;
+		try {
+			result = doa.updatePassword_Faculty(fid,old,new1);
+		} catch (FacultyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 		
+ 		System.out.println(result); 
+    	
+    	
+    }
     
     
     
@@ -598,31 +621,326 @@ public class Main {
     //******************************************************************//
 		//***************************Main*********************************//
 		//******************************************************************//
+    
+    
+    public static void LoginFacultyUseCase() {
+        Scanner sc= new Scanner(System.in);
+        
+        System.out.println("****Faculty Login Portal****\n\n");
+		
+        System.out.println("Enter UserName:");
+		String user= sc.nextLine();
+		System.out.println("Enter Password:");
+		String pass= sc.nextLine();
+	
+		
+		LoginDao doa=new LoginDaoImpl();
 
+			try {
+				Faculty faculty = doa.LoginFaculty(user,pass);
+				System.out.println("Welcome  "+ faculty.getFacultyname());
+				
+				int ch;
+				
+				do {
+					System.out.println("\n1.View Course Plan.");
+					System.out.println("2.Fill Day Wise Planner.");
+					System.out.println("3.Update Password.");
+					System.out.println("5.Back To Main Page");
+					
+					System.out.println("\nEnter your choice: ");
+					ch = sc.nextInt();
+					
+					switch(ch) {
+		            
+		            case 1:Main.getAllCoursesPlanUseCase();
+		            break;
+		            
+		            case 2:Main.registerCoursePlanUseCase();
+		            break;
+		            
+		            case 3:Main.updatePassword_FacultyUseCase();
+			            break;
+			            
+		            case 4:System.out.println("\n\n");
+			            break;
+					
+					
+				    }
+				    }while(ch !=4);
+				
+				
+			} catch (FacultyException e) {
+			System.out.println(e.getMessage());
+			}
+    }
 
+    
+    
+    public static void LoginAdminUseCase() {
+        Scanner sc= new Scanner(System.in);
+        
+        System.out.println("\n***Admin Login Portal\n");
+		
+        System.out.println("Enter UserName:");
+		String user= sc.nextLine();
+		System.out.println("Enter Password:");
+		String pass= sc.nextLine();
+	
+		
+		LoginDao doa=new LoginDaoImpl();
+
+			try {
+				boolean admin = doa.LoginAdmin(user,pass);
+				System.out.println("\n\nWelcome  Admin\n");
+				
+				int ch;
+				
+				do {
+					   System.out.println("\n ***Course Monitoring System ***\n\n");
+					   
+					   System.out.println("1. Course-- Create , Update, View."); 
+					   System.out.println("2. Batch-- Create, Update, View."); 
+					   System.out.println("3. Faculty-- Create, Update, View ."); 
+					   System.out.println("4. Course plan-- Create, Update, View."); 
+					   System.out.println("5. Day Time Table."); 
+					   System.out.println("6. Generate Report."); 
+					   System.out.println("7. Exit."); 
+					    
+					   
+					   System.out.println("Enter your choice: ");  
+			            ch = sc.nextInt(); 
+			            
+			            switch(ch) {
+			            
+			            case 1:
+			            	int ch1;
+							
+							do {
+								System.out.println("\n1.Create Course");
+								System.out.println("2.View Course");
+								System.out.println("3.Update Course Fee");
+								System.out.println("4.Update Course Desc");
+								System.out.println("5.Back To Main Page");
+								
+								System.out.println("\nEnter your choice: ");
+								ch1 = sc.nextInt();
+								
+								switch(ch1) {
+					            
+					            case 1:Main.registerCourseUseCase();
+					            break;
+					            
+					            case 2:Main.GetAllCoursesUsecase();
+					            break;
+					            
+					            case 3:Main.updateFee_CourseUseCase();
+						            break;
+						            
+					            case 4:Main.updateDesc_CourseUseCase();
+						            break;
+						            
+					            case 5:System.out.println("\n\n");
+						            break;
+								
+								
+							    }
+							    }while(ch1 !=5);
+                                break;
+			               
+			            case 2:
+			            	int ch2;
+						
+						do {
+							System.out.println("\n1.Create Batch");
+							System.out.println("2.View Batch");
+							System.out.println("3.Allocate Faculty To Batch.");
+							System.out.println("4.Change total No of Students.");
+							System.out.println("5.Back To Main Page");
+							
+							System.out.println("\nEnter your choice: ");
+							ch2 = sc.nextInt();
+							
+							switch(ch2) {
+				            
+				            case 1:Main.registerBatchUseCase();
+				            break;
+				            
+				            case 2:Main.getAllBatchUseCase();
+				            break;
+				            
+				            case 3:Main.allocateFacultyUseCase();
+					            break;
+					            
+				            case 4:Main.updateNoOfStudent_BatchUseCase();
+					            break;
+					            
+				            case 5:System.out.println("\n\n");
+					            break;
+							
+							
+						    }
+						    }while(ch2 !=5);
+                            break;
+		                
+			            case 3:
+			            	int ch3;
+						
+						do {
+							System.out.println("\n1.Create Faculty");
+							System.out.println("2.View Faculty");
+							System.out.println("3.Update Faculty Mobile No.");
+							System.out.println("4.Update Faculty Address.");
+							System.out.println("5.Back To Main Page");
+							
+							System.out.println("\nEnter your choice: ");
+							ch3 = sc.nextInt();
+							
+							switch(ch3) {
+				            
+				            case 1:Main.registerFacultyUseCase();
+				            break;
+				            
+				            case 2:Main.getAllFacultyUseCase();
+				            break;
+				            
+				            case 3:Main.updateMobile_FacultyUseCase();
+					            break;
+					            
+				            case 4:Main.updateAddress_FacultyUseCase();
+					            break;
+					            
+				          
+					            
+				            case 5:System.out.println("\n\n");
+					            break;
+							
+							
+						    }
+						    }while(ch3 !=5);
+                            break;
+		                
+			            case 4:int ch4;
+						
+						do {
+							System.out.println("\n1.Create CoursePlan");
+							System.out.println("2.View CoursePlan");
+							System.out.println("3.Update CoursePlan Topic");
+							System.out.println("4.Update CoursePlan Status");
+							System.out.println("5.Back To Main Page");
+							
+							System.out.println("\nEnter your choice: ");
+							ch4 = sc.nextInt();
+							
+							switch(ch4) {
+				            
+				            case 1:Main.registerCoursePlanUseCase();
+				            break;
+				            
+				            case 2:Main.getAllCoursesPlanUseCase();
+				            break;
+				            
+				            case 3:Main.updateTopic_CoursePlanUseCase();
+					            break;
+					            
+				            case 4:Main.updateStatus_CoursePlanUseCase();
+					            break;
+					            
+				            case 5:System.out.println("\n\n");
+					            break;
+							
+							
+						    }
+						    }while(ch4 !=5);
+                            break;
+		                   
+			            case 5:Main.GetDaywiseUpdateUseCase();
+		                   break;
+		                   
+			            case 6:Main.getReportUseCase();
+		                   break;   
+			            
+			           
+		                   
+			            case 7:System.out.println("See you soon...");  
+		                   break;   
+			            
+			            
+			            }
+					   
+					   
+				}while(ch !=7);
+					
+				
+				
+				
+			} catch (FacultyException e) {
+			System.out.println(e.getMessage());
+			}
+    }
     
 
 	public static void main(String[] args) {
+		  Scanner sc= new Scanner(System.in);
 		// TODO Auto-generated method stub
 		
 //		Main.registerCourseUseCase();
 //		Main.GetAllCoursesUsecase();
 //		Main.updateFee_CourseUseCase();
 //		Main.updateDesc_CourseUseCase();
+		
 //		Main.registerFacultyUseCase();
 //		Main.getAllFacultyUseCase();
 //		Main.updateMobile_FacultyUseCase();
 //		Main.updateAddress_FacultyUseCase();
+//		Main.updatePassword_FacultyUseCase();
+		
 //		Main.registerBatchUseCase();
 //		Main.getAllBatchUseCase();
 //		Main.allocateFacultyUseCase();
 //		Main.updateNoOfStudent_BatchUseCase();
+		
 //		Main.registerCoursePlanUseCase();
 //		Main.getAllCoursesPlanUseCase();
 //		Main.updateTopic_CoursePlanUseCase();
 //		Main.updateStatus_CoursePlanUseCase();
+		
 //		Main.GetDaywiseUpdateUseCase();
 //		Main.getReportUseCase();
+		
+//		Main.LoginFacultyUseCase();
+//		Main.LoginAdminUseCase();
+		
+		
+		int ch;
+		
+		do {
+			   System.out.println("\n ***Course Monitoring System ***\n"); 
+			   System.out.println("1. Admin Login.");
+			   System.out.println("2. Faculty Login.");	
+			   System.out.println("1. Exit Login.");
+			   
+			   System.out.println("\nEnter your choice: ");  
+	            ch = sc.nextInt(); 
+	            
+	            switch(ch) {
+	            
+	            case 1:Main.LoginAdminUseCase();
+	                   break;
+	               
+	            case 2:Main.LoginFacultyUseCase();
+                   break;
+                
+                   
+	            case 3:System.out.println("See you soon...");  
+                   break;   
+	            
+	            
+	            }
+			   
+			   
+		}while(ch !=3);
+		
 		
 		
 		
