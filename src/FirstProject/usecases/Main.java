@@ -423,6 +423,8 @@ public class Main {
 	
     public static void registerCoursePlanUseCase() {
         Scanner sc= new Scanner(System.in);
+        
+        System.out.println("\n****Create Course Plan****\n");
 		
 		System.out.println("Enter Batch Id:");
 		int batchId= sc.nextInt();
@@ -466,6 +468,8 @@ public class Main {
     public static void getAllCoursesPlanUseCase() {
     	
         CoursePlanDao dao = new CoursePlanDaoImpl();
+        
+        System.out.println("\n****All Course Plan****\n");
 
 		
 		try {
@@ -497,6 +501,7 @@ public class Main {
     public static void updateTopic_CoursePlanUseCase() {
     	
         Scanner sc= new Scanner(System.in);
+        System.out.println("\n****Update Topic****\n");
 		
 		System.out.println("Enter Course Plan Id :");
 		int planId= sc.nextInt();
@@ -516,12 +521,13 @@ public class Main {
     }
     
     
-//**********updateTopic_CoursePlanUseCase*********//
+//**********updateStatus_CoursePlanUseCase*********//
     
 	
     public static void updateStatus_CoursePlanUseCase() {
     	
         Scanner sc= new Scanner(System.in);
+        System.out.println("\n****Update Status****\n");
 		
 		System.out.println("Enter Course Plan Id :");
 		int planId= sc.nextInt();
@@ -549,6 +555,8 @@ public class Main {
     
     public static void GetDaywiseUpdateUseCase() {
           DaywiseUpdateDao dao = new DaywiseUpdateDaoImpl();
+          
+          System.out.println("\n****GetDaywiseUpdate****\n");
 		
 		
 		try {
@@ -587,7 +595,7 @@ public class Main {
     
     public static void getReportUseCase() {
         ReportDao dao = new ReportDaoImpl();
-		
+        System.out.println("\n****Report****\n");
 		
 		try {
 		List<Report> students= dao.getReport();
@@ -626,11 +634,11 @@ public class Main {
     public static void LoginFacultyUseCase() {
         Scanner sc= new Scanner(System.in);
         
-        System.out.println("****Faculty Login Portal****\n\n");
+        System.out.println("\n\n\n**** Faculty Login Portal ****\n\n");
 		
-        System.out.println("Enter UserName:");
+        System.out.println("  Enter UserName:");
 		String user= sc.nextLine();
-		System.out.println("Enter Password:");
+		System.out.println("  Enter Password:");
 		String pass= sc.nextLine();
 	
 		
@@ -638,17 +646,21 @@ public class Main {
 
 			try {
 				Faculty faculty = doa.LoginFaculty(user,pass);
-				System.out.println("Welcome  "+ faculty.getFacultyname());
+				System.out.println("\n           Welcome  "+ faculty.getFacultyname());
 				
 				int ch;
 				
 				do {
-					System.out.println("\n1.View Course Plan.");
-					System.out.println("2.Fill Day Wise Planner.");
-					System.out.println("3.Update Password.");
-					System.out.println("5.Back To Main Page");
 					
-					System.out.println("\nEnter your choice: ");
+					
+					System.out.println("\n****Course Monitoring System****\n");
+					
+					System.out.println("\n  1.View Course Plan.");
+					System.out.println("  2.Fill Day Wise Planner.");
+					System.out.println("  3.Update Password.");
+					System.out.println("  4.Log Out as "+faculty.getFacultyname()+"\n");
+					
+					System.out.println("    Enter your choice: ");
 					ch = sc.nextInt();
 					
 					switch(ch) {
@@ -680,11 +692,11 @@ public class Main {
     public static void LoginAdminUseCase() {
         Scanner sc= new Scanner(System.in);
         
-        System.out.println("\n***Admin Login Portal\n");
+        System.out.println("\n****Admin Login Portal****\n");
 		
-        System.out.println("Enter UserName:");
+        System.out.println("  Enter UserName:");
 		String user= sc.nextLine();
-		System.out.println("Enter Password:");
+		System.out.println("  Enter Password:");
 		String pass= sc.nextLine();
 	
 		
@@ -692,23 +704,23 @@ public class Main {
 
 			try {
 				boolean admin = doa.LoginAdmin(user,pass);
-				System.out.println("\n\nWelcome  Admin\n");
+				System.out.println("\n\n            Welcome  Admin\n");
 				
 				int ch;
 				
 				do {
 					   System.out.println("\n ***Course Monitoring System ***\n\n");
 					   
-					   System.out.println("1. Course-- Create , Update, View."); 
-					   System.out.println("2. Batch-- Create, Update, View."); 
-					   System.out.println("3. Faculty-- Create, Update, View ."); 
-					   System.out.println("4. Course plan-- Create, Update, View."); 
-					   System.out.println("5. Day Time Table."); 
-					   System.out.println("6. Generate Report."); 
-					   System.out.println("7. Exit."); 
+					   System.out.println("  1. Course-- Create , Update, View."); 
+					   System.out.println("  2. Batch-- Create, Update, View."); 
+					   System.out.println("  3. Faculty-- Create, Update, View ."); 
+					   System.out.println("  4. Course plan-- Create, Update, View."); 
+					   System.out.println("  5. Day Time Table."); 
+					   System.out.println("  6. Generate Report."); 
+					   System.out.println("  7. Log Out as Admin"); 
 					    
 					   
-					   System.out.println("Enter your choice: ");  
+					   System.out.println("\n    Enter your choice: ");  
 			            ch = sc.nextInt(); 
 			            
 			            switch(ch) {
@@ -717,13 +729,15 @@ public class Main {
 			            	int ch1;
 							
 							do {
-								System.out.println("\n1.Create Course");
-								System.out.println("2.View Course");
-								System.out.println("3.Update Course Fee");
-								System.out.println("4.Update Course Desc");
-								System.out.println("5.Back To Main Page");
+								System.out.println("\n   ***Course***");
 								
-								System.out.println("\nEnter your choice: ");
+								System.out.println("\n  1.Create Course");
+								System.out.println("  2.View Course");
+								System.out.println("  3.Update Course Fee");
+								System.out.println("  4.Update Course Desc");
+								System.out.println("  5.Back To Main Page");
+								
+								System.out.println("\n    Enter your choice: ");
 								ch1 = sc.nextInt();
 								
 								switch(ch1) {
@@ -752,13 +766,14 @@ public class Main {
 			            	int ch2;
 						
 						do {
-							System.out.println("\n1.Create Batch");
-							System.out.println("2.View Batch");
-							System.out.println("3.Allocate Faculty To Batch.");
-							System.out.println("4.Change total No of Students.");
-							System.out.println("5.Back To Main Page");
+							System.out.println("\n   ***Batch***");
+							System.out.println("\n  1.Create Batch");
+							System.out.println("  2.View Batch");
+							System.out.println("  3.Allocate Faculty To Batch.");
+							System.out.println("  4.Change total No of Students.");
+							System.out.println("  5.Back To Main Page");
 							
-							System.out.println("\nEnter your choice: ");
+							System.out.println("\n    Enter your choice: ");
 							ch2 = sc.nextInt();
 							
 							switch(ch2) {
@@ -787,13 +802,14 @@ public class Main {
 			            	int ch3;
 						
 						do {
-							System.out.println("\n1.Create Faculty");
-							System.out.println("2.View Faculty");
-							System.out.println("3.Update Faculty Mobile No.");
-							System.out.println("4.Update Faculty Address.");
-							System.out.println("5.Back To Main Page");
+							System.out.println("\n   ***Faculty***");
+							System.out.println("\n  1.Create Faculty");
+							System.out.println("  2.View Faculty");
+							System.out.println("  3.Update Faculty Mobile No.");
+							System.out.println("  4.Update Faculty Address.");
+							System.out.println("  5.Back To Main Page");
 							
-							System.out.println("\nEnter your choice: ");
+							System.out.println("\n    Enter your choice: ");
 							ch3 = sc.nextInt();
 							
 							switch(ch3) {
@@ -823,13 +839,14 @@ public class Main {
 			            case 4:int ch4;
 						
 						do {
-							System.out.println("\n1.Create CoursePlan");
-							System.out.println("2.View CoursePlan");
-							System.out.println("3.Update CoursePlan Topic");
-							System.out.println("4.Update CoursePlan Status");
-							System.out.println("5.Back To Main Page");
+							System.out.println("\n   ***CoursePlan***");
+							System.out.println("\n  1.Create CoursePlan");
+							System.out.println("  2.View CoursePlan");
+							System.out.println("  3.Update CoursePlan Topic");
+							System.out.println("  4.Update CoursePlan Status");
+							System.out.println("  5.Back To Main Page");
 							
-							System.out.println("\nEnter your choice: ");
+							System.out.println("\n    Enter your choice: ");
 							ch4 = sc.nextInt();
 							
 							switch(ch4) {
@@ -862,7 +879,7 @@ public class Main {
 			            
 			           
 		                   
-			            case 7:System.out.println("See you soon...");  
+			            case 7:System.out.println("   See you soon...");  
 		                   break;   
 			            
 			            
@@ -915,12 +932,12 @@ public class Main {
 		int ch;
 		
 		do {
-			   System.out.println("\n ***Course Monitoring System ***\n"); 
-			   System.out.println("1. Admin Login.");
-			   System.out.println("2. Faculty Login.");	
-			   System.out.println("1. Exit Login.");
+			   System.out.println("\n**** Course Monitoring System ****\n"); 
+			   System.out.println(" 1. Admin Login.");
+			   System.out.println(" 2. Faculty Login.");	
+			   System.out.println(" 3. Exit.");
 			   
-			   System.out.println("\nEnter your choice: ");  
+			   System.out.println("\n    Enter your choice: ");  
 	            ch = sc.nextInt(); 
 	            
 	            switch(ch) {
@@ -932,7 +949,7 @@ public class Main {
                    break;
                 
                    
-	            case 3:System.out.println("See you soon...");  
+	            case 3:System.out.println("  See you soon...");  
                    break;   
 	            
 	            
