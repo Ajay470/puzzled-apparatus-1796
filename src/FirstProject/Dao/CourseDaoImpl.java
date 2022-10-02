@@ -57,7 +57,7 @@ public class CourseDaoImpl implements CourseDao {
 
 	@Override
 	public List<Course> getAllCourses() throws CourseException {
-List<Course> courseList= new ArrayList<>();
+        List<Course> courseList= new ArrayList<>();
 		
 		
 		try(Connection conn= DBConnection.provideConnection()) {

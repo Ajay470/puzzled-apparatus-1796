@@ -20,7 +20,7 @@ public class Main {
 	
 	public static void registerCourseUseCase() {
 		
-		 Scanner sc= new Scanner(System.in);
+		    Scanner sc= new Scanner(System.in);
 			
 			System.out.println("Enter Course Name:");
 			String cname= sc.next();
