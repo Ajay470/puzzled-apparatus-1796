@@ -15,6 +15,7 @@ import masai.utility.DBConnection;
 
 public class CoursePlanDaoImpl implements CoursePlanDao {
 
+//	Register new CoursePlan function.
 	@Override
 	public String registerCoursePlan(CoursePlan courseplan) {
         String message = "CoursePlan Not Inserted..";
@@ -50,6 +51,7 @@ public class CoursePlanDaoImpl implements CoursePlanDao {
 		return message;
 	}
 
+//	get all the list of CoursePlan in org.
 	@Override
 	public List<CoursePlan> getAllCoursesPlan() throws CoursePlanException {
          List<CoursePlan> coursePlanList= new ArrayList<>();
@@ -97,6 +99,7 @@ public class CoursePlanDaoImpl implements CoursePlanDao {
 		return coursePlanList;
 	}
 
+//  Update Topic  by admin.
 	@Override
 	public String updateTopic_CoursePlan(int planId, String topic) {
 		String message = " Topic Not Changed..";
@@ -127,6 +130,7 @@ public class CoursePlanDaoImpl implements CoursePlanDao {
 		return message;
 	}
 
+//  Update Status  by admin.
 	@Override
 	public String updateStatus_CoursePlan(int planId, String status) {
 		String message = " Status Not Changed..";

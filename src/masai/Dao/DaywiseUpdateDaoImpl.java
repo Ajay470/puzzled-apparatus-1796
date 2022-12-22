@@ -13,6 +13,7 @@ import masai.utility.DBConnection;
 
 public class DaywiseUpdateDaoImpl implements DaywiseUpdateDao {
 
+//	get all the list of CoursePlan daywise/ Time table of courses.
 	@Override
 	public List<DaywiseUpdate> getDaywiseUpdate() throws DaywiseUpdateException {
          List<DaywiseUpdate> DaywiseUpdateList= new ArrayList<>();

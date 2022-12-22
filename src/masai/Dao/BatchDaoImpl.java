@@ -15,6 +15,8 @@ import masai.utility.DBConnection;
 
 public class BatchDaoImpl implements BatchDao {
 
+	
+//	Register new batch function.
 	@Override
 	public String registerBatch(Batch batch) {
          String message = "Not Inserted..";
@@ -53,6 +55,7 @@ public class BatchDaoImpl implements BatchDao {
 		return message;
 	}
 
+//	get all the list of batch in org.
 	@Override
 	public List<Batch> getAllBatch() throws BatchException {
         List<Batch> BatchList= new ArrayList<>();
@@ -101,6 +104,7 @@ public class BatchDaoImpl implements BatchDao {
 		return BatchList;
 	}
 
+//	allocate faculty to batch
 	@Override
 	public String allocateFaculty(int FacultyId,int batchid) {
 		String message = " Faculty Not Inserted..";
@@ -131,6 +135,7 @@ public class BatchDaoImpl implements BatchDao {
 		return message;
 	}
 
+//	Assign no of student in particular batch
 	@Override
 	public String updateNoOfStudent_Batch(int batchId, int numberOfStudent) {
 		String message = " Student Count not Updated..";

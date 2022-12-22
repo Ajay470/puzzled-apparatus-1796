@@ -13,6 +13,7 @@ import masai.utility.DBConnection;
 
 public class ReportDaoImpl implements ReportDao {
 
+//	Get all the Report of all the curriculum and activities . 
 	@Override
 	public List<Report> getReport() throws ReportException {
            List<Report> ReportList= new ArrayList<>();

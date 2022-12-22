@@ -9,36 +9,8 @@ import masai.bean.*;
 public class Main {
 	public static void main(String[] args) {
 		  Scanner sc= new Scanner(System.in);
-		// TODO Auto-generated method stub
-		
-//		Main.registerCourseUseCase();
-//		Main.GetAllCoursesUsecase();
-//		Main.updateFee_CourseUseCase();
-//		Main.updateDesc_CourseUseCase();
-		
-//		Main.registerFacultyUseCase();
-//		Main.getAllFacultyUseCase();
-//		Main.updateMobile_FacultyUseCase();
-//		Main.updateAddress_FacultyUseCase();
-//		Main.updatePassword_FacultyUseCase();
-		
-//		Main.registerBatchUseCase();
-//		Main.getAllBatchUseCase();
-//		Main.allocateFacultyUseCase();
-//		Main.updateNoOfStudent_BatchUseCase();
-		
-//		Main.registerCoursePlanUseCase();
-//		Main.getAllCoursesPlanUseCase();
-//		Main.updateTopic_CoursePlanUseCase();
-//		Main.updateStatus_CoursePlanUseCase();
-		
-//		Main.GetDaywiseUpdateUseCase();
-//		Main.getReportUseCase();
-		
-//		Main.LoginFacultyUseCase();
-//		Main.LoginAdminUseCase();
-		
-		
+
+
 		int ch;
 		
 		do {
@@ -49,6 +21,8 @@ public class Main {
 			   
 			   System.out.println("\n    Enter your choice: ");  
 	            ch = sc.nextInt(); 
+	            
+	      
 	            
 	            switch(ch) {
 	            
@@ -67,23 +41,15 @@ public class Main {
 			   
 			   
 		}while(ch !=3);
-		
-		
-		
-		
-		
-
+	
 	}
 	
 	
 
-    //******************************************************************//
-	//***************************Main*********************************//
-	//******************************************************************//
-    //******************************************************************//
 
-    
-    
+	//***************************Login *********************************//
+	//******************************************************************//
+
     public static void LoginFacultyUseCase() {
         Scanner sc= new Scanner(System.in);
         
@@ -349,14 +315,11 @@ public class Main {
 			}
     }
     
-	
 
-	//******************************************************************//
 	//***************************Course*********************************//
 	//******************************************************************//
 	
 	          //**********registerCourseUseCase*********//
-	
 	public static void registerCourseUseCase() {
 		
 		    Scanner sc= new Scanner(System.in);
@@ -389,8 +352,6 @@ public class Main {
 	
 	
                //**********GetAllCoursesUsecase*********//
-	
-	
 	public static void GetAllCoursesUsecase() {
         CourseDao dao = new CourseDaoImpl();
 
@@ -418,8 +379,6 @@ public class Main {
 	}
 	
 	            //**********GetAllCoursesUsecase*********//
-	
-	
 	public static void updateFee_CourseUseCase() {
 		Scanner sc= new Scanner(System.in);
 		
@@ -442,7 +401,6 @@ public class Main {
 	
 	
 	         //**********updateDesc_CourseUseCase*********//
-	
 	public static void updateDesc_CourseUseCase() {
         Scanner sc= new Scanner(System.in);
 		
@@ -464,12 +422,11 @@ public class Main {
 	
 	
 	
-	    //******************************************************************//
+	   
 		//***************************Faculty*********************************//
 		//******************************************************************//
 	
 	            //**********registerFacultyUseCase*********//
-	
 	public static void registerFacultyUseCase() {
         Scanner sc= new Scanner(System.in);
 		
@@ -511,7 +468,6 @@ public class Main {
 	}
 	
     //**********getAllFacultyUseCase*********//
-	
 	public static void getAllFacultyUseCase() {
 		 FacultyDao dao = new FacultyDaoImpl();
 			
@@ -543,8 +499,7 @@ public class Main {
 	}
 	
                	//**********updateMobile_FacultyUseCase*********//
-	
-	public static void updateMobile_FacultyUseCase() {
+    public static void updateMobile_FacultyUseCase() {
         Scanner sc= new Scanner(System.in);
 		
 		System.out.println("Enter Faculty Id :");
@@ -564,7 +519,6 @@ public class Main {
 	
 	
 	           //**********updateAddress_FacultyUseCase*********//
-	
     public static void updateAddress_FacultyUseCase() {
         Scanner sc= new Scanner(System.in);
 		
@@ -584,7 +538,6 @@ public class Main {
 	}
 	
     //**********updateAddress_FacultyUseCase*********//
-    
     public static void updatePassword_FacultyUseCase() {
     	Scanner sc= new Scanner(System.in);
  		
@@ -616,12 +569,11 @@ public class Main {
     
     
     
-  //******************************************************************//
+
   		//***************************Batch*********************************//
   		//******************************************************************//
   	
   	            //**********registerBatchUseCase*********//
-    
     public static void registerBatchUseCase() {
     	
         Scanner sc= new Scanner(System.in);
@@ -665,9 +617,7 @@ public class Main {
     }
     
     
-                    //**********getAllBatchUseCase*********//
-    
-    
+                    //**********getAllBatchUseCase*********//    
     public static void getAllBatchUseCase() {
     	BatchDao dao = new BatchDaoImpl();
 		
@@ -696,8 +646,6 @@ public class Main {
 	
 	
                     //**********allocateFacultyUseCase*********//
-    
-    
     public static void allocateFacultyUseCase() {
     	
     	Scanner sc= new Scanner(System.in);
@@ -724,9 +672,7 @@ public class Main {
     }
     
     
- //**********updateNoOfStudent_Batch*********//
-    
-    
+                 //**********updateNoOfStudent_Batch*********//
     public static void updateNoOfStudent_BatchUseCase() {
     	
         Scanner sc= new Scanner(System.in);
@@ -753,13 +699,11 @@ public class Main {
     
     
     
-    //******************************************************************//
+    
 		//***************************CoursePlan*********************************//
 		//******************************************************************//
 	
-	            //**********registerCoursePlanUseCase*********//
-    
-	
+	          //**********registerCoursePlanUseCase*********//
     public static void registerCoursePlanUseCase() {
         Scanner sc= new Scanner(System.in);
         
@@ -801,9 +745,7 @@ public class Main {
     	
     }
     
-             //**********getAllCoursesPlanUseCase*********//
-    
-	
+             //**********getAllCoursesPlanUseCase*********//	
     public static void getAllCoursesPlanUseCase() {
     	
         CoursePlanDao dao = new CoursePlanDaoImpl();
@@ -834,9 +776,7 @@ public class Main {
     	
     }
     
-          //**********updateTopic_CoursePlanUseCase*********//
-    
-	
+             //**********updateTopic_CoursePlanUseCase*********//
     public static void updateTopic_CoursePlanUseCase() {
     	
         Scanner sc= new Scanner(System.in);
@@ -860,9 +800,7 @@ public class Main {
     }
     
     
-//**********updateStatus_CoursePlanUseCase*********//
-    
-	
+             //**********updateStatus_CoursePlanUseCase*********//
     public static void updateStatus_CoursePlanUseCase() {
     	
         Scanner sc= new Scanner(System.in);
@@ -885,8 +823,7 @@ public class Main {
     	
     
     
-    
-  //******************************************************************//
+
   		//***************************DaywiseUpdate*********************************//
   		//******************************************************************//
   	
@@ -926,12 +863,11 @@ public class Main {
     
     
     
-         //******************************************************************//
+         
   		//***************************Report*********************************//
   		//******************************************************************//
   	
   	              //**********getReportUseCase*********//
-    
     public static void getReportUseCase() {
         ReportDao dao = new ReportDaoImpl();
         System.out.println("\n****Report****\n");

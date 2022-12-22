@@ -15,6 +15,7 @@ import masai.utility.DBConnection;
 
 public class FacultyDaoImpl implements FacultyDao{
 
+//	Register new Faculty in our org.
 	@Override
 	public String registerFaculty(Faculty faculty) {
        String message = "Not Inserted..";
@@ -49,6 +50,7 @@ public class FacultyDaoImpl implements FacultyDao{
 		return message;
 	}
 
+//	get all the list of Faculty in org.
 	@Override
 	public List<Faculty> getAllFaculty() throws FacultyException {
 List<Faculty> FacultyList= new ArrayList<>();
@@ -98,6 +100,7 @@ List<Faculty> FacultyList= new ArrayList<>();
 		return FacultyList;
 	}
 
+//  Update Faculty Mobile Number.
 	@Override
 	public String updateMobile_Faculty(int facultyid, String mob){
 		String message = " Mobile Number Not Updated..";
@@ -128,6 +131,7 @@ List<Faculty> FacultyList= new ArrayList<>();
 		return message;
 	}
 
+//  Update Faculty Address.
 	@Override
 	public String updateAddress_Faculty(int facultyid, String add) {
 		String message = " Address Not Updated..";
@@ -158,6 +162,7 @@ List<Faculty> FacultyList= new ArrayList<>();
 		return message;
 	}
 
+//  Update Faculty Password.
 	@Override
 	public String updatePassword_Faculty(int facultyid, String oldpassword, String newpassword) throws FacultyException {
 String message = "Not Updated...";
