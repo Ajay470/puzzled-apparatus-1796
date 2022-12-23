@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 import masai.Exception.FacultyException;
 import masai.bean.Faculty;
 import masai.utility.DBConnection;
 
 public class LoginDaoImpl implements LoginDao {
 
+	private EncryptService decrypt=new EncryptServiceImpl();
+	
 //	Faculty login function.
 	@Override
 	public Faculty LoginFaculty(String username, String Password) throws FacultyException {
@@ -19,8 +22,14 @@ public class LoginDaoImpl implements LoginDao {
 		try(Connection conn= DBConnection.provideConnection()){
 			PreparedStatement ps= conn.prepareStatement("select * from Faculty where username=? AND password=?");
 
+			
+//			Encryption for password.
+			Faculty Demo=new Faculty();
+			Demo.setPassword(Password);
+			Faculty faculty2= decrypt.EncryptPassword(Demo);
+			
 			ps.setString(1, username);
-			ps.setString(2, Password);
+			ps.setString(2, faculty2.getPassword());
 			
 			ResultSet rs=ps.executeQuery();
 			

@@ -26,7 +26,9 @@ public class Main {
 	            
 	            switch(ch) {
 	            
-	            case 1:Main.LoginAdminUseCase();
+	            case 1:System.out.println(" Default Admin id-`admin` and password -`admin`");
+	            	
+	            	   Main.LoginAdminUseCase();
 	                   break;
 	               
 	            case 2:Main.LoginFacultyUseCase();
@@ -43,9 +45,6 @@ public class Main {
 		}while(ch !=3);
 	
 	}
-	
-	
-
 
 	//***************************Login *********************************//
 	//******************************************************************//

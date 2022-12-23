@@ -15,7 +15,7 @@ import masai.utility.DBConnection;
 public class CourseDaoImpl implements CourseDao {
 
 	
-	
+//	Register new Course function.
 	@Override
 	public String registerCourse(Course course) {
 		String message = "Not Inserted..";
@@ -52,7 +52,7 @@ public class CourseDaoImpl implements CourseDao {
 	}
 	
 	
-
+//	get all the list of Course in org.
 	@Override
 	public List<Course> getAllCourses() throws CourseException {
         List<Course> courseList= new ArrayList<>();
@@ -101,7 +101,7 @@ public class CourseDaoImpl implements CourseDao {
 	}
 
 
-
+//  Update course fee by admin.
 	@Override
 	public String updateFee_Course(int CourseId, int Fee) {
 		String message = " Fee Not Updated..";
@@ -133,7 +133,7 @@ public class CourseDaoImpl implements CourseDao {
 	}
 
 
-
+//  Update course Description by admin.
 	@Override
 	public String updateDesc_Course(int CourseId, String desc) {
 		String message = " Description Not Updated..";
