@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 import masai.Exception.CourseException;
 import masai.Exception.FacultyException;
 import masai.bean.Course;
@@ -14,12 +16,15 @@ import masai.bean.Faculty;
 import masai.utility.DBConnection;
 
 public class FacultyDaoImpl implements FacultyDao{
+	
+	private EncryptService encrypt=new EncryptServiceImpl();
 
 //	Register new Faculty in our org.
 	@Override
 	public String registerFaculty(Faculty faculty) {
        String message = "Not Inserted..";
 	
+       Faculty faculty1= encrypt.EncryptPassword(faculty);
 	
 		try(Connection conn= DBConnection.provideConnection()) {
 			
@@ -28,12 +33,12 @@ public class FacultyDaoImpl implements FacultyDao{
 			
 			
 			
-			ps.setString(1, faculty.getFacultyname());
-			ps.setString(2, faculty.getFacultyaddress());
-			ps.setString(3, faculty.getMobile());
-			ps.setString(4, faculty.getEmail());
-			ps.setString(5, faculty.getUsername());
-			ps.setString(6, faculty.getPassword());
+			ps.setString(1, faculty1.getFacultyname());
+			ps.setString(2, faculty1.getFacultyaddress());
+			ps.setString(3, faculty1.getMobile());
+			ps.setString(4, faculty1.getEmail());
+			ps.setString(5, faculty1.getUsername());
+			ps.setString(6, faculty1.getPassword());
 			
 			int x= ps.executeUpdate();
 			
